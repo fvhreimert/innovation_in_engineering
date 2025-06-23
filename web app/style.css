@@ -1,0 +1,167 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --sand-light: #fdfaf3;
+    --sand-dark: #f4e8c1;
+    --sea-green: #5b9279;
+    --sea-dark: #3c6e71;
+    --text-color: #333d29;
+    --text-light: #656d4a;
+    --border-color: #e0e0e0;
+    --accent-color: #d9ad26;
+    --warning-color: #d9534f;
+}
+
+/* ... (previous CSS from body to .page-header) ... */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--sand-light); color: var(--text-color); line-height: 1.7; }
+.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1, h2, h3 { font-weight: 600; margin-bottom: 0.5em; color: var(--sea-dark); }
+p { margin-bottom: 1em; }
+.page-header { text-align: center; margin: 2rem 0 3rem 0; }
+.page-header h1 { font-size: 3rem; color: var(--sea-dark); }
+.page-header p { font-size: 1.2rem; color: var(--text-light); }
+.card { background-color: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.main-image { width: 100%; border-radius: 8px; margin-bottom: 1.5rem; }
+.split-section { display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+.split-section > div { flex: 1; min-width: 300px; }
+.nature-images { display: flex; gap: 1rem; margin-top: 1rem; }
+.nature-images figure { text-align: center; flex: 1; }
+.nature-images img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); }
+.nature-images figcaption { font-size: 0.9em; color: var(--text-light); margin-top: 0.5rem; }
+.map-container iframe { border-radius: 8px; border: 1px solid var(--border-color); }
+
+/* --- Live Data Bar Charts --- */
+.subtle-text {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+.data-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem 2rem; /* Increased row gap */
+}
+.data-metric {
+    text-align: center;
+    cursor: pointer; /* UPDATED: Indicate it's clickable */
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+.data-metric:hover {
+    background-color: var(--sand-light);
+}
+.data-metric label { font-weight: 600; color: var(--text-light); display: block; margin-bottom: 0.25rem; }
+.data-value { font-size: 1.8rem; font-weight: 600; color: var(--sea-dark); display: block; margin-bottom: 0.75rem; transition: color 0.3s ease; }
+.data-value.value-warning { color: var(--warning-color); }
+.chart-container { position: relative; height: 80px; display: flex; gap: 4px; align-items: flex-end; padding: 0 5px; }
+.chart-bar { flex: 1; background-color: var(--sea-green); border-radius: 3px 3px 0 0; transition: height 0.5s ease-in-out; opacity: 0.6; }
+.chart-bar:last-child { background-color: var(--sea-dark); opacity: 1; }
+.normal-range { position: absolute; left: 0; width: 100%; background-color: var(--sand-dark); opacity: 0.6; z-index: -1; border-radius: 4px; }
+
+
+/* --- NEW: Future Challenges Section --- */
+.comparison-images {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to stack on small screens */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.comparison-images figure {
+    flex: 1;
+    min-width: 250px; /* Ensures they don't get too squished */
+    text-align: center;
+}
+.comparison-images img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.comparison-images figcaption {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* ... (previous CSS for project section, form, footer) ... */
+.project-image { width: 100%; border-radius: 8px; }
+.progress-bar-container { background-color: var(--sand-light); border-radius: 30px; padding: 4px; border: 1px solid var(--border-color); }
+.progress-fill { background-color: var(--accent-color); color: var(--text-color); padding: 0.5rem 1rem; border-radius: 30px; text-align: center; font-weight: 600; white-space: nowrap; }
+#feedback-form { margin-top: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+input[type="text"], input[type="email"], textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem; background-color: var(--sand-light); }
+textarea { resize: vertical; }
+.btn { background-color: var(--sea-dark); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
+.btn:hover { background-color: var(--sea-green); }
+footer { text-align: center; padding: 2rem; font-size: 0.9em; color: var(--text-light); }
+
+/* --- NEW: Project Divider --- */
+.project-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 2.5rem 0;
+}
+
+
+/* --- NEW: Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-light);
+    cursor: pointer;
+}
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2.2rem; }
+    .card { padding: 1.5rem; }
+}

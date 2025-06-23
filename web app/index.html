@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostrup Strand - Coastal Protection Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+
+        <div class="page-header">
+            <h1>Hostrup Strand</h1>
+            <p>Coastal Protection & Environmental Dashboard</p>
+        </div>
+
+        <!-- Section 1: Beach Description & Map -->
+        <section class="card">
+            <h2>About Hostrup Strand</h2>
+            <img src="images/coast.png" alt="A beautiful photo of Hostrup Strand" class="main-image">
+            <p>Hostrup Strand is a dynamic and vital part of the Danish west coast, characterized by its expansive sandy beaches and protective dune systems. Facing the North Sea, it's an area constantly shaped by natural forces, making it crucial for both ecological study and local recreation. Its preservation is key to protecting inland areas and the diverse life it supports, demanding careful management and understanding of its ever-changing nature.</p>
+            <div class="split-section">
+                <div class="text-content">
+                    <h3>A Unique Ecosystem</h3>
+                    <p>The coastline here is a fragile but rich ecosystem where marine and terrestrial environments meet. The dunes, stabilized by marram grass, shelter unique flora and fauna, including the Natterjack Toad. Offshore, essential eelgrass beds serve as nurseries for fish, highlighting the interconnectedness of these habitats. This delicate balance requires diligent conservation to thrive amidst environmental pressures.</p>
+                    <div class="nature-images">
+                        <figure>
+                            <img src="images/sea_toad.png" alt="A Natterjack Toad">
+                            <figcaption>Natterjack Toad</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/rare_eel_grass.png" alt="Rare Eel Grass underwater">
+                            <figcaption>Eelgrass Beds</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <h3>Satellite View</h3>
+                    <iframe width="100%" height="400" frameborder="0" src="https://www.openstreetmap.org/export/embed.html?bbox=8.7289,56.5568,8.7689,56.5768&layer=mapnik&marker=56.5668,8.7489"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Live Data Dashboard (No changes) -->
+        <section class="card">
+            <h2>Live Environmental Data (Last 24 Hours)</h2>
+            <p class="subtle-text">Click on any metric for more information.</p>
+            <div class="data-dashboard">
+                <!-- All 6 data metrics remain here -->
+                <div class="data-metric" data-metric-key="temp">
+                    <label>Sea Temperature</label>
+                    <span id="temp-value" class="data-value">-- °C</span>
+                    <div class="chart-container" id="temp-chart"><div class="normal-range"></div></div>
+                </div>
+                <div class="data-metric" data-metric-key="oxygen">
+                    <label>Oxygen Level</label>
+                    <span id="oxygen-value" class="data-value">-- mg/L</span>
+                    <div class="chart-container" id="oxygen-chart"><div class="normal-range"></div></div>
+                </div>
+                <div class="data-metric" data-metric-key="sealevel">
+                    <label>Sea Level (vs. norm)</label>
+                    <span id="sealevel-value" class="data-value">-- cm</span>
+                    <div class="chart-container" id="sealevel-chart"><div class="normal-range"></div></div>
+                </div>
+                <div class="data-metric" data-metric-key="salinity">
+                    <label>Salinity</label>
+                    <span id="salinity-value" class="data-value">-- PSU</span>
+                    <div class="chart-container" id="salinity-chart"><div class="normal-range"></div></div>
+                </div>
+                <div class="data-metric" data-metric-key="turbidity">
+                    <label>Turbidity</label>
+                    <span id="turbidity-value" class="data-value">-- NTU</span>
+                    <div class="chart-container" id="turbidity-chart"><div class="normal-range"></div></div>
+                </div>
+                <div class="data-metric" data-metric-key="ph">
+                    <label>pH Level</label>
+                    <span id="ph-value" class="data-value">-- pH</span>
+                    <div class="chart-container" id="ph-chart"><div class="normal-range"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Future Challenges -->
+        <section class="card">
+            <h2>Future Challenges: Sea Level Rise</h2>
+            <p>The Danish coastline, including Hostrup Strand, is on the front lines of climate change. Current models project a significant sea level rise over the coming decades. This could lead to permanent inundation of low-lying areas, drastically increase coastal erosion, and threaten both natural habitats and human infrastructure. Developing proactive adaptation strategies is essential to build resilience against these future conditions and protect our coastal heritage.</p>
+            <div class="comparison-images">
+                <figure>
+                    <img src="images/before.png" alt="Current view of the coastline">
+                    <figcaption>Current Coastline</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/after.png" alt="Projected view of the coastline after 1 meter sea level rise">
+                    <figcaption>Projected Coastline (+1m Sea Level Rise)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+
+        <!-- Section 3: Current Projects (UPDATED) -->
+        <section class="card">
+            <h2>Current Coastal Protection Projects</h2>
+            
+            <!-- Project 1: BioReef Initiative -->
+            <div class="split-section">
+                <div class="text-content">
+                    <h3>Project 1: The "BioReef" Initiative</h3>
+                    <p>The BioReef project is a forward-thinking effort to bolster coastal resilience at Hostrup Strand. We are strategically placing specially designed artificial reef structures on the seabed. These structures serve a dual purpose: they dissipate wave energy, reducing erosion, and simultaneously create complex habitats that attract diverse marine life, thereby boosting local biodiversity and strengthening the natural coastal defenses.</p>
+                    <h3>Project Progress</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-fill" style="width: 65%;"><span>65% Complete</span></div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/artificial_reef.jpg" alt="An artificial reef structure being deployed" class="project-image">
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="project-divider">
+
+            <!-- Project 2: Beach Nourishment -->
+            <div class="split-section">
+                 <div class="text-content">
+                    <h3>Project 2: Ongoing Beach Nourishment</h3>
+                    <p>Beach nourishment is a vital, recurring process where sand, typically dredged from compatible offshore sources, is added to the beach and dunes. This directly counteracts erosion by widening the beach, which then acts as a natural buffer against storm surges and protects the fragile dune system. While not a permanent fix, it's crucial for maintaining the beach's protective and recreational qualities in the face of ongoing coastal change.</p>
+                    <h3>Project Progress</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-fill" style="width: 40%;"><span>40% Complete (Cycle 2024)</span></div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/beach_nourishment.png" alt="A large pipe spraying sand onto a beach for nourishment" class="project-image">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Feedback and Contact (No changes) -->
+        <section class="card">
+            <h2>Get Involved</h2>
+            <form id="feedback-form">
+                 <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+                 <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+                 <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+                 <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Hostrup Coastal Protection Initiative. A prototype for a better future.</p>
+    </footer>
+
+    <!-- Modal Structure (No changes) -->
+    <div class="modal-overlay" id="info-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close-btn">×</span>
+            <h3 id="modal-title">Metric Information</h3>
+            <p id="modal-text">Details about the selected metric will appear here.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
